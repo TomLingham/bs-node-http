@@ -1,8 +1,8 @@
 # bs-node-http
 
 Node `http` bindings for
-(Bucklescript)[https://github.com/BuckleScript/bucklescript] in
-(Reason)[https://github.com/facebook/reason]
+[Bucklescript](https://github.com/BuckleScript/bucklescript) in
+[Reason](https://github.com/facebook/reason)
 
 ## Status
 Obligatory "this is just a WIP" section. Feel free to pull down and extend
@@ -10,7 +10,7 @@ the API and/or make it better ... I don't pretend to be a ReasonML wizard.
 
 I will be accepting PR's. Node HTTP is one of my most used modules and I'm
 surprised this wasn't done yet. A good alternative, though, is the
-(bs-express)[https://github.com/reasonml-community/bs-express] project if
+[bs-express](https://github.com/reasonml-community/bs-express) project if
 you are after routing as well.
 
 ## Usage
