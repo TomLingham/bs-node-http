@@ -1,0 +1,20 @@
+{
+  "name": "bs-node-http",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "example": "nodemon example/example.bs.js"
+  },
+  "keywords": [
+    "BuckleScript",
+    "bs-node-http"
+  ],
+  "author": "Tom Lingham <tjlingham@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^2.1.0",
+    "nodemon": "^1.14.3"
+  }
+}
