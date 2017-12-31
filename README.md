@@ -13,6 +13,18 @@ surprised this wasn't done yet. A good alternative, though, is the
 [bs-express](https://github.com/reasonml-community/bs-express) project if
 you are after routing as well.
 
+## Installation
+
+Install `bs-node-http` from npm. `npm i -S bs-node-http`.
+
+Then, add `bs-node-http` to yor `bs-dependencies` in your `bsconfig.json`.
+
+```json
+{
+  "bs-dependencies": ["bs-node-http"]
+}
+```
+
 ## Usage
 
 The api is modified to favour piping the response so doesn't map 1 to 1 with
