@@ -2,8 +2,7 @@
   "name": "bsb-node-http",
   "bsc-flags":["-bs-super-errors"],
   "sources": [
-    { "dir": "src" },
-    { "dir": "example" }
+    { "dir": "src" }
   ],
   "bs-dependencies": [],
   "refmt": 3
