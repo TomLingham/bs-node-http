@@ -1,5 +1,5 @@
 {
-  "name": "bsb-node-http",
+  "name": "bs-node-http",
   "bsc-flags":["-bs-super-errors"],
   "sources": [
     { "dir": "src" }
