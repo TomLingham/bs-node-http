@@ -1,5 +1,6 @@
 {
   "name": "bs-node-http",
+  "description": "BuckleScript bindings for Node http in Reason",
   "version": "0.0.5",
   "scripts": {
     "build": "bsb -make-world",
@@ -7,10 +8,20 @@
     "clean": "bsb -clean-world",
     "example": "nodemon example/example.bs.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomLingham/bs-node-http.git"
+  },
   "keywords": [
-    "BuckleScript",
-    "bs-node-http"
+    "reason",
+    "bucklescript",
+    "node",
+    "http"
   ],
+  "bugs": {
+    "url": "https://github.com/TomLingham/bs-node-http/issues"
+  },
+  "homepage": "https://github.com/TomLingham/bs-node-http#readme",
   "author": "Tom Lingham <tjlingham@gmail.com>",
   "license": "MIT",
   "devDependencies": {
