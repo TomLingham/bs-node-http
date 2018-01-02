@@ -32,16 +32,24 @@ the Node API. It's very minimal at the moment - if what you want isn't added
 feel free to add a binding in `src/NodeHTTP.re` then implement the API in
 `src/Http.re`
 
-```reasonml
+```reason
 open Http;
 
-let handler = (~request as _, ~response) =>
-  response
-  |> Response.setStatusCode(200)
-  |> Response.setHeader("X-some-fancy-header", "hederz 4 dayz")
-  |> Response.write("Foo")
-  |> Response.write("Bar")
-  |> Response.close;
+let server =
+  create_server((~request as _, ~response) =>
+    Response.(
+      response
+      |> setStatusCode(200)
+      |> write("Hello, world!")
+      |> write("UmVhc29uTUwgaXMgcHJldHR5IGdyZWF0IQ==", ~encoding=Encoding.Base64)
+      |> close
+    )
+  );
 
-let server = create_server(handler) |> Server.listen(~port=3000);
+Server.(
+  server
+  |> listen(~port=3000)
+  |> on(`request((~request as _, ~response as _) => print_string("Request event fired!")))
+  |> on(`close(() => print_string("Whoops, the server was closed :(")))
+);
 ```
