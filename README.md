@@ -1,5 +1,8 @@
 # bs-node-http
 
+[![npm](https://img.shields.io/npm/v/bs-node-http.svg)](https://www.npmjs.com/package/bs-node-http)
+[![npm](https://img.shields.io/npm/dw/bs-node-http.svg)](https://www.npmjs.com/package/bs-node-http)
+
 Node `http` bindings for
 [Bucklescript](https://github.com/BuckleScript/bucklescript) in
 [Reason](https://github.com/facebook/reason)
@@ -32,7 +35,7 @@ the Node API. It's very minimal at the moment - if what you want isn't added
 feel free to add a binding in `src/NodeHTTP.re` then implement the API in
 `src/Http.re`
 
-```reason
+```java
 open Http;
 
 let server =
