@@ -1,7 +1,7 @@
 {
   "name": "bs-node-http",
   "description": "BuckleScript bindings for Node http in Reason",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
