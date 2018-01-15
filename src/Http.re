@@ -1,10 +1,29 @@
 type http;
 
+[@bs.deriving {jsConverter: newType}]
+type httpMethod = [
+  | `GET
+  | `POST
+  | `PUT
+  | `UPDATE
+  | `DELETE
+  | `HEAD
+  | `OPTION
+  | `CONNECT
+  | `TRACE
+  | `PATCH
+];
+
 module ClientRequest = {
   type t;
 
   [@bs.get_index] [@bs.scope ("headers")] external getHeader : (t, string) => string = "";
-  [@bs.get] external getMethod : (t) => string = "method";
+  [@bs.get] external getMethod : t => abs_httpMethod = "method";
+
+  let getMethod = (response: t) => {
+    let method = getMethod(response);
+    httpMethodFromJs(method);
+  };
 };
 
 module Server = {

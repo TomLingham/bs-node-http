@@ -1,5 +1,19 @@
 type http;
 
+[@bs.deriving {jsConverter: newType}]
+type httpMethod = [
+  | `GET
+  | `POST
+  | `PUT
+  | `UPDATE
+  | `DELETE
+  | `HEAD
+  | `OPTION
+  | `CONNECT
+  | `TRACE
+  | `PATCH
+];
+
 module ClientRequest: {
   type t;
 
@@ -17,7 +31,7 @@ module ClientRequest: {
    * 
    * https://nodejs.org/api/http.html#http_message_method
    */
-  [@bs.get] external getMethod : (t) => string = "method";
+  let getMethod: t => httpMethod;
 };
 
 module Server: {

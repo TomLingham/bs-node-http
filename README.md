@@ -40,12 +40,20 @@ open Http;
 
 let server =
   create_server((~request as _, ~response) =>
+    switch (ClientRequest.getMethod(request)) {
+    | `GET => print_string("GET money, GET paid")
+    | `POST => print_string("POSTman Pat")
+    | `PUT => print_string("PUTting the tee-pee in HTTP")
+    | _ => print_string("We don't accept other methods...")
+    };
+
     Response.(
       response
       |> setStatusCode(200)
+      |> setHeader("x-reason", "reason-ml")
       |> write("Hello, world!")
-      |> write("UmVhc29uTUwgaXMgcHJldHR5IGdyZWF0IQ==", ~encoding=Encoding.Base64)
-      |> close
+      |> write("UmVhc29uTUwgaXMgcHJldHR5IGdyZWF0IQ==", ~encoding=`base64)
+      |> end_
     )
   );
 
