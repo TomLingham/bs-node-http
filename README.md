@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/bs-node-http.svg)](https://www.npmjs.com/package/bs-node-http)
 [![npm](https://img.shields.io/npm/dw/bs-node-http.svg)](https://www.npmjs.com/package/bs-node-http)
 
-Node `http` bindings for
+Node [`http`](https://nodejs.org/api/http.html) bindings for
 [Bucklescript](https://github.com/BuckleScript/bucklescript) in
 [Reason](https://github.com/facebook/reason)
 
@@ -32,8 +32,7 @@ Then, add `bs-node-http` to yor `bs-dependencies` in your `bsconfig.json`.
 
 The api is modified to favour piping the response so doesn't map 1 to 1 with
 the Node API. It's very minimal at the moment - if what you want isn't added
-feel free to add a binding in `src/NodeHTTP.re` then implement the API in
-`src/Http.re`
+feel free to submit an issue or a PR. 
 
 ```java
 open Http;
