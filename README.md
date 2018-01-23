@@ -34,11 +34,11 @@ The api is modified to favour piping the response so doesn't map 1 to 1 with
 the Node API. It's very minimal at the moment - if what you want isn't added
 feel free to submit an issue or a PR. 
 
-```java
+```reason
 open Http;
 
 let server =
-  create_server((~request as _, ~response) =>
+  createServer((~request, ~response) => {
     switch (ClientRequest.getMethod(request)) {
     | `GET => print_string("GET money, GET paid")
     | `POST => print_string("POSTman Pat")
@@ -46,20 +46,18 @@ let server =
     | _ => print_string("We don't accept other methods...")
     };
 
-    Response.(
+    ServerResponse.(
       response
-      |> setStatusCode(200)
+      |> setStatusCode(418)
       |> setHeader("x-reason", "reason-ml")
-      |> write("Hello, world!")
+      |> write("Hello, world! I am a teapot!")
       |> write("UmVhc29uTUwgaXMgcHJldHR5IGdyZWF0IQ==", ~encoding=`base64)
       |> end_
     )
-  );
+  });
 
 Server.(
   server
   |> listen(~port=3000)
-  |> on(`request((~request as _, ~response as _) => print_string("Request event fired!")))
-  |> on(`close(() => print_string("Whoops, the server was closed :(")))
 );
 ```
